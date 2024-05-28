@@ -1,3 +1,4 @@
+
 import React from "react";
 import * as R from "ramda";
 import { user } from "../constants/User";
@@ -22,13 +23,13 @@ const Ramda = () => {
 
   const safeOperation = R.tryCatch(riskyOperation, handleError);
 
-  const processNumber = (num: number): string | number => {
-    return R.ifElse(
-      R.is(Number),
-      safeOperation,        // Apply the safe operation if input is a number
-      () => 'Invalid input' // Return this message if input is not a number
-    )(num);
-  };
+  // const processNumber = (num: number): string | number => {
+  //   return R.ifElse(
+  //     R.is(Number),
+  //     safeOperation,        // Apply the safe operation if input is a number
+  //     () => 'Invalid input' // Return this message if input is not a number
+  //   )(num);
+  // };
 
   const fetchData = new UserModel(user)
 

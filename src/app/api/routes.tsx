@@ -12,15 +12,15 @@ export const dynamic = "force-dynamic"; // default
 
 
 // 캐싱과 같은 여러 동적 옵션가능
-export async function GET() {
-  const res = await fetch('http://localhost:3000/api/v1', {
-    // headers: {
-    //   'Content-Type': 'application/json',
-    //   'API-Key': process.env.DATA_API_KEY,
-    // },
-  })
-  // const data = await res.json({success : 'success'})
+// export async function GET() {
+//   const res = await fetch('http://localhost:3000/api/v1', {
+//     // headers: {
+//     //   'Content-Type': 'application/json',
+//     //   'API-Key': process.env.DATA_API_KEY,
+//     // },
+//   })
+//   const data = await res.json({success : 'success'})
 
  
-  return Response.json({ data })
-}
+//   return NextResponse.json({ data })
+// }

@@ -1,8 +1,9 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import * as R from "ramda";
-import Ramda from "./components/Ramda";
+import Image from 'next/image';
+import * as R from 'ramda';
+import Ramda from './components/Ramda';
+import Proxy from './components/Order';
 
 export default function Home() {
   // console.log(R);
@@ -19,9 +20,7 @@ export default function Home() {
 
   const checkArr = R.pipe(arrFunc, arrFunc2)(arr);
 
-
-  // TODO : Database fetch해보기 
-
+  // TODO : Database fetch해보기
 
   return (
     <>
@@ -29,11 +28,13 @@ export default function Home() {
       {add} / {add2}
       {total}
       <div>
-        <h2>this : {checkArr[0]} {checkArr[1]}</h2>
+        <h2>
+          this : {checkArr[0]} {checkArr[1]}
+        </h2>
         {R.sum(checkArr)}
       </div>
-
       <Ramda />
+      <Proxy />
     </>
   );
 }
