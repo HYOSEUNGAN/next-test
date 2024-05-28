@@ -11,6 +11,7 @@
   "dependencies": {
     "contentlayer2": "^0.4.6",
     "effect-ts": "^0.0.1",
+    "immer": "^10.1.1",
     "next": "14.2.3",
     "ramda": "^0.30.0",
     "react": "^18",

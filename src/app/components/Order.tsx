@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import produce from 'immer';
 
 const ProxyComponent = () => {
   // Proxy design pattern
@@ -44,7 +45,7 @@ const ProxyComponent = () => {
     value: 42,
   };
 
-  // multer와 비슷
+  // immer와 비슷 https://github.com/immerjs/immer
   const handler: ProxyHandler<typeof targetObj> = {
     get: function (target, prop: string | symbol) {
       // 따로 속성이 있는지 체크 할 수 있음
@@ -94,6 +95,17 @@ const ProxyComponent = () => {
         }
 
         return target[prop];
+      },
+
+      set(target, prop, value) {
+        // 사용자가 사용자 이름을 변경할 수 있는 권한이 있는지 확인합니다.
+        if (prop === 'username') {
+          console.warn('Unauthorized change of username!');
+          return false; // false를 반환하거나 허가되지 않은 변경을 처리합니다.
+        }
+
+        target[prop] = value;
+        return true;
       },
     });
 
