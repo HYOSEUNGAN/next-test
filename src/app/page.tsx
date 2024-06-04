@@ -4,6 +4,7 @@ import Image from 'next/image';
 import * as R from 'ramda';
 import Ramda from './components/Ramda';
 import Proxy from './components/Order';
+import MemoryLeak from './components/MemoryLeak';
 
 export default function Home() {
   // console.log(R);
@@ -33,8 +34,9 @@ export default function Home() {
         </h2>
         {R.sum(checkArr)}
       </div>
+      <MemoryLeak />
       <Ramda />
-      <Proxy />
+      {/* <Proxy /> */}
     </>
   );
 }
