@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { GetStaticProps } from 'next';
+import { pipe } from 'ramda';
 
 // SSR (서버사이드렌더링)을 사용하는 이유?
 // 저는 기존에 하드웨어의 성장을 믿고 개발을 하는 회사에서 일한 경험이 있는데 결국은 뒤쳐지고 큰 흐름을 놓치는 테크 회사를 다녔다고 느꼈습니다(meteor.js)를 썼음(풀스택) ㅎ npm trends 연간 3000다운로드..
@@ -22,6 +23,8 @@ import { GetStaticProps } from 'next';
 // 힙사이즈 확인 후 작업?
 // 혹은 api연속 호출, 데이터(메모리)량 제어 
 
+// 경험공유
+
 interface MemoryLeakProps {
   initialData: number[];
 }
@@ -42,9 +45,9 @@ const MemoryLeak: React.FC<MemoryLeakProps> = ({ initialData }) => {
   useEffect(() => {
     // 메모리 사용량을 추적하는 함수
     const trackMemoryUsage = (): void => {
-      const memory = window.performance.memory; // 브라우저에서 제공하는 메모리 정보
+      const memory = (window.performance as any).memory; // 브라우저에서 제공하는 메모리 정보
       const usedMemory = memory.usedJSHeapSize / 1024 / 1024; // 사용 중인 메모리 크기(MB)
-      setMemoryUsage(usedMemory.toFixed(2)); // 소수점 2자리까지 표시
+      setMemoryUsage(usedMemory.toFixed(2) as any); // 소수점 2자리까지 표시
     };
 
     // 1초마다 메모리 사용량 추적

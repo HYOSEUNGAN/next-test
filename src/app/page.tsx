@@ -5,6 +5,9 @@ import * as R from 'ramda';
 import Ramda from './components/Ramda';
 import Proxy from './components/Order';
 import MemoryLeak from './components/MemoryLeak';
+import BubbleSort from './components/BubbleSort';
+import SelectionSort from './components/SelectionSort';
+import InsertSort from './components/InsertSort';
 
 export default function Home() {
   // console.log(R);
@@ -34,7 +37,10 @@ export default function Home() {
         </h2>
         {R.sum(checkArr)}
       </div>
-      <MemoryLeak />
+      {/* <MemoryLeak /> */}
+      <BubbleSort />
+      <SelectionSort />
+      <InsertSort />
       <Ramda />
       {/* <Proxy /> */}
     </>
