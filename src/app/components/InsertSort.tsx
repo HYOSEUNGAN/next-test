@@ -1,7 +1,7 @@
 import React from 'react';
 
 const InsertSort = () => {
-  console.log(InsertSortFunc([1, 2, 3, 4, 5, 1, 42, 54363, 222, 44, 232]));
+  // console.log(InsertSortFunc([1, 2, 3, 4, 5, 1, 42, 54363, 222, 44, 232]));
   return <div></div>;
 };
 

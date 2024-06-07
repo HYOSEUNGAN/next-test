@@ -8,6 +8,7 @@ import MemoryLeak from './components/MemoryLeak';
 import BubbleSort from './components/BubbleSort';
 import SelectionSort from './components/SelectionSort';
 import InsertSort from './components/InsertSort';
+import Hash from './components/Hash';
 
 export default function Home() {
   // console.log(R);
@@ -42,6 +43,7 @@ export default function Home() {
       <SelectionSort />
       <InsertSort />
       <Ramda />
+      <Hash />
       {/* <Proxy /> */}
     </>
   );

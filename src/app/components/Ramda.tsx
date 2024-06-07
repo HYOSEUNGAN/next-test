@@ -33,7 +33,7 @@ const Ramda = () => {
 
   const fetchData = new UserModel(user)
 
-  console.log(fetchData.funcConsole(user))
+  // console.log(fetchData.funcConsole(user))
 
   // console.log(process.env.customKey)
 
