@@ -9,6 +9,9 @@ import BubbleSort from './components/BubbleSort';
 import SelectionSort from './components/SelectionSort';
 import InsertSort from './components/InsertSort';
 import Hash from './components/Hash';
+import LinkedList from './components/LinkedList';
+import ArticlePage from './components/ArticlePage';
+import ReactThinking from './components/ReactThinking';
 
 export default function Home() {
   // console.log(R);
@@ -30,20 +33,23 @@ export default function Home() {
   return (
     <>
       <h1>JUST TEST</h1>
-      {add} / {add2}
+      <ArticlePage />
+      <ReactThinking />
+      {/* {add} / {add2}
       {total}
       <div>
         <h2>
           this : {checkArr[0]} {checkArr[1]}
         </h2>
         {R.sum(checkArr)}
-      </div>
+      </div> */}
       {/* <MemoryLeak /> */}
-      <BubbleSort />
-      <SelectionSort />
-      <InsertSort />
-      <Ramda />
-      <Hash />
+      {/* <BubbleSort /> */}
+      {/* <SelectionSort /> */}
+      {/* <InsertSort /> */}
+      {/* <Ramda /> */}
+      {/* <Hash /> */}
+      {/* <LinkedList /> */}
       {/* <Proxy /> */}
     </>
   );
