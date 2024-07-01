@@ -12,6 +12,7 @@ import Hash from './components/Hash';
 import LinkedList from './components/LinkedList';
 import ArticlePage from './components/ArticlePage';
 import ReactThinking from './components/ReactThinking';
+import React18 from './components/React18';
 
 export default function Home() {
   // console.log(R);
@@ -33,8 +34,9 @@ export default function Home() {
   return (
     <>
       <h1>JUST TEST</h1>
-      <ArticlePage />
-      <ReactThinking />
+      <React18 />
+      {/* <ArticlePage /> */}
+      {/* <ReactThinking /> */}
       {/* {add} / {add2}
       {total}
       <div>
