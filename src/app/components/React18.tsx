@@ -12,6 +12,15 @@ import React, { Suspense, startTransition, useDeferredValue, useEffect, useState
 // 그 중 가장 핵심적인 Concurrent Feeture를 설명하겠습니다.
 // useTransition hook과 useDeferredValue hook을 사용하여 비동기 작업을 처리할 수 있습니다.
 
+// 사례들
+// 데이터 로딩 및 성능 최적화: 대용량 데이터의 렌더링이 필요한 경우, 데이터를 비동기적으로 미리 가져와서 화면에 표시하기 전에 준비할 수 있습니다. 이는 사용자가 기다리는 시간을 최소화하고, 사용자 경험을 부드럽게 만드는 데 도움이 됩니다.
+// 인피니트 스크롤링: 인피니트 스크롤링은 페이지를 스크롤할 때 추가적인 데이터를 비동기적으로 렌더링하여 사용자가 스크롤할 때마다 새로운 컨텐츠가 자연스럽게 로드되도록 합니다.
+// 실시간 업데이트: 실시간 데이터 업데이트가 필요한 경우, 새로운 데이터가 도착할 때마다 비동기적으로 UI를 업데이트하여 실시간으로 변경 사항을 반영할 수 있습니다.
+// 사용자 입력 응답: 사용자 입력에 따라 빠르게 반응할 수 있도록 비동기적으로 UI 상태를 업데이트하여 사용자 경험을 개선할 수 있습니다. 예를 들어, 자동 완성 기능이나 폼 입력 후 유효성 검사 등이 있습니다.
+// UI 응답성 향상: 비동기적인 작업을 통해 UI 렌더링을 지연시키지 않고, 동시에 여러 작업을 처리하여 UI 응답성을 높이는 데 기여할 수 있습니다.
+
+// 큰 프로젝트나 실시간 데이터를 다루는 프로젝트에서는 매우 유용하게 사용할 수 있을 것 같습니다.
+
 const React18:React.FC = () => {
   return (
     <div>
@@ -25,14 +34,6 @@ const React18:React.FC = () => {
 }
 
 export default React18
-
-type CardProps = {
-  delay:number;
-  text:string;
-}
-type ArrType= number[] | string[];
-
-
 
 
 const Card:React.FC<CardProps> = ({ delay, text }) => {
@@ -96,3 +97,9 @@ const fetchTextWithDelay = (text:string, delay:number):Promise<string> => {
     }, delay);
   });
 };
+
+type CardProps = {
+  delay:number;
+  text:string;
+}
+type ArrType= number[] | string[];
